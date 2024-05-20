@@ -28,7 +28,7 @@ if [ -f $existingOTAjson ]; then
 	device_name=`grep -n "\"device_name\"" $existingOTAjson | cut -d ":" -f 3 | sed 's/"//g' | sed 's/,//g' | xargs`
 	filename=$3
 	version=`echo "$3" | cut -d'-' -f2`
-	download="https://sourceforge.net/projects/projectmatrixx/files/Android-14/$1/$filename/download"
+	download="https://sourceforge.net/projects/machad3xroms/files/Project-Matrixx/$1/$filename/download"
 	buildprop=$2/system/build.prop
 	linenr=`grep -n "ro.system.build.date.utc" $buildprop | cut -d':' -f1`
 	timestamp=`sed -n $linenr'p' < $buildprop | cut -d'=' -f2`
